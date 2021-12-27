@@ -1,13 +1,15 @@
-import React, { Component } from "react";
 import O from "./O";
+import React from "react";
 
-export default class N extends Component {
-  render() {
-    return (
-      <>
-        <h1>N Component</h1>
-        <O />
-      </>
-    );
+export default function N({ obj }) {
+  var data = "";
+  for (const ele in obj.nHook) {
+    data = obj.nHook[ele];
   }
+  return (
+    <>
+      <h1>{data}</h1>
+      <O obj={obj} />
+    </>
+  );
 }

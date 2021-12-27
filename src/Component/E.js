@@ -1,13 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 import F from "./F";
-
-export default class E extends Component {
-  render() {
-    return (
-      <React.Fragment>
-        <h1> E Component</h1>
-        <F />
-      </React.Fragment>
-    );
+export default function E({ obj }) {
+  var data = "";
+  for (const ele in obj.eHook) {
+    data = obj.eHook[ele];
   }
+  return (
+    <React.Fragment>
+      <h1>{data}</h1>
+      <F obj={obj} />
+    </React.Fragment>
+  );
 }

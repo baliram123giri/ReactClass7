@@ -1,11 +1,15 @@
 import React from "react";
 import U from "./U";
 
-export default function T() {
+export default function T({ obj }) {
+  var data = "";
+  for (const ele in obj.tHook) {
+    data = obj.tHook[ele];
+  }
   return (
     <>
-      <h1>T Component</h1>
-      <U />
+      <h1>{data}</h1>
+      <U obj={obj} />
     </>
   );
 }

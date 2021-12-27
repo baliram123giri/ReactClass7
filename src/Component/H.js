@@ -1,13 +1,15 @@
-import React, { Component } from "react";
 import I from "./I";
+import React from "react";
 
-export default class H extends Component {
-  render() {
-    return (
-      <>
-        <h1>H Component</h1>
-        <I />
-      </>
-    );
+export default function H({ obj }) {
+  var data = "";
+  for (const ele in obj.hHook) {
+    data = obj.hHook[ele];
   }
+  return (
+    <>
+      <h1>{data}</h1>
+      <I obj={obj} />
+    </>
+  );
 }

@@ -1,13 +1,17 @@
-import React, { Component } from "react";
-import S from "./S";
 
-export default class R extends Component {
-  render() {
-    return (
-      <>
-        <h1>R Component</h1>
-        <S />
-      </>
-    );
+import S from "./S";
+import React from 'react'
+
+export default function R({obj}) {
+  var data = "";
+  for (const ele in obj.rHook) {
+    data = obj.rHook[ele];
   }
+  return (
+    <>
+    <h1>{data}</h1>
+    <S obj={obj}/>
+  </>
+  )
 }
+
